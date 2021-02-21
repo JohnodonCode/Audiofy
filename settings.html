@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Audiofy</title>
+    <script defer src="./settingsrenderer.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <style>
+    #window-controls {
+    -webkit-app-region: drag;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    }
+    #close-button {
+        -webkit-app-region: no-drag;
+    }
+    </style>
+  </head>
+  <body style="overflow-x: hidden;">
+    <div id="appContainer">
+      <header id="titlebar">
+        <div id="drag-region">
+          <div id="window-title">
+            <span>Settings</span>
+          </div>
+          <div id="window-controls">
+            <div class="button" id="close-button">
+              <img class="icon" srcset="img/close-w-10.png 1x, img/close-w-12.png 1.25x, img/close-w-15.png 1.5x, img/close-w-15.png 1.75x, img/close-w-20.png 2x, img/close-w-20.png 2.25x, img/close-w-24.png 2.5x, img/close-w-30.png 3x, img/close-w-30.png 3.5x" draggable="false" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="spacer"></div>
+        <div class="main">
+            <form action="" id="settingsForm">
+                <label for="inputDir">Music Directory: </label> <br />
+                <input type="text" id="inputDir">
+                <button id="openDir">Choose folder</button> <br />
+                <button type="submit" id="settingsSave">Save Settings</button>
+            </form>
+        </div>
+    </div>
+    <div id="empty" style="display: none; visibility: hidden;"></div>
+  </body>
+</html>

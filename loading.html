@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiofy</title>
+    <style type="text/css">
+    body {
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  background: #1A2933;
+  color: #FFF;
+}
+        @keyframes ldio-09kcyt2xdunn{0%{transform:rotate(0)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}.ldio-09kcyt2xdunn div{position:absolute;animation:ldio-09kcyt2xdunn 1s linear infinite;width:160px;height:160px;top:20px;left:20px;border-radius:50%;box-shadow:0 4px 0 0 #00ffc8;transform-origin:80px 82px}.loadingio-spinner-eclipse-3655fhg11zz{width:200px;height:200px;display:inline-block;overflow:hidden;background:0 0}.ldio-09kcyt2xdunn{width:100%;height:100%;position:relative;transform:translateZ(0) scale(1);backface-visibility:hidden;transform-origin:0 0}.ldio-09kcyt2xdunn div{box-sizing:content-box}
+        * {
+            -webkit-app-region: drag;
+        }
+        .main {
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="main">
+        <h1 style="padding-bottom:10px;">Audiofy</h1>
+        <div class="loadingio-spinner-eclipse-3655fhg11zz"><div class="ldio-09kcyt2xdunn"><div></div></div></div>
+        <p id="loading" style="font-size: x-large; color: #ffffff;">Loading app...</p>
+    </div>
+    <script>
+        const electron = require('electron');
+        const ipc = electron.ipcRenderer;
+        const loaderinfo = document.getElementById('loading');
+        let songsLoaded = 0;
+        let totalSongs;
+        ipc.on('songSize', function(e, n){
+            totalSongs = n;
+            loaderinfo.innerHTML = `Loading songs... (${songsLoaded}/${totalSongs})`;
+        });
+        ipc.on('songAdded', function(e, n){
+            songsLoaded++;
+            loaderinfo.innerHTML = `Loading songs... (${songsLoaded}/${totalSongs})`;
+        });
+    </script>
+</body>
+</html>

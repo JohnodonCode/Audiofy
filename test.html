@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Audiofy</title>
+    <script defer src="./renderer.js"></script>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body style="overflow-x: hidden;">
+    <div id="appContainer">
+      <header id="titlebar">
+        <div id="drag-region">
+          <div id="window-title">
+            <span>Audiofy</span>
+          </div>
+          <div id="window-controls">
+
+            <div class="button" id="min-button">
+              <img class="icon" srcset="img/min-w-10.png 1x, img/min-w-12.png 1.25x, img/min-w-15.png 1.5x, img/min-w-15.png 1.75x, img/min-w-20.png 2x, img/min-w-20.png 2.25x, img/min-w-24.png 2.5x, img/min-w-30.png 3x, img/min-w-30.png 3.5x" draggable="false" />
+            </div>
+      
+            <div class="button" id="max-button">
+              <img class="icon" srcset="img/max-w-10.png 1x, img/max-w-12.png 1.25x, img/max-w-15.png 1.5x, img/max-w-15.png 1.75x, img/max-w-20.png 2x, img/max-w-20.png 2.25x, img/max-w-24.png 2.5x, img/max-w-30.png 3x, img/max-w-30.png 3.5x" draggable="false" />
+            </div>
+      
+            <div class="button" id="restore-button">
+              <img class="icon" srcset="img/restore-w-10.png 1x, img/restore-w-12.png 1.25x, img/restore-w-15.png 1.5x, img/restore-w-15.png 1.75x, img/restore-w-20.png 2x, img/restore-w-20.png 2.25x, img/restore-w-24.png 2.5x, img/restore-w-30.png 3x, img/restore-w-30.png 3.5x" draggable="false" />
+            </div>
+      
+            <div class="button" id="close-button">
+              <img class="icon" srcset="img/close-w-10.png 1x, img/close-w-12.png 1.25x, img/close-w-15.png 1.5x, img/close-w-15.png 1.75x, img/close-w-20.png 2x, img/close-w-20.png 2.25x, img/close-w-24.png 2.5x, img/close-w-30.png 3x, img/close-w-30.png 3.5x" draggable="false" />
+            </div>
+      
+          </div>
+        </div>
+      </header>
+      <div class="spacer"></div>
+      <div class="main">
+
+        <div id="songs">
+          
+        </div>
+      </div>
+      <div id="seeker">
+        <img src="img/unknown.svg" id="seekerimg" width="60" height="60">
+        <div id="info">
+          <p id="seekertitle">Boku Dake Ga Inai Machi Opening</p>
+          <p id="seekerartist">Revival</p>
+        </div>
+        <div id="seekerbtns">
+          <img src="img/pause.svg" alt="pause" id="pauseplaybtn">
+          <div class="progressdiv">
+            <span id="seekerprogress">0:00</span> 
+            <input type="range" id="progress" min="0" max="89.976" value="0">
+            <span id="seekerprogresstotal">0:00</span>
+          </div>
+        </div>
+        <img src="img/settings.svg" alt="settings" id="settingsBtn" width="42px" height="42px">
+      </div>
+      
+    </div>
+    <div id="empty" style="display: none; visibility: hidden;"></div>
+  </body>
+</html>
