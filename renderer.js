@@ -6,7 +6,7 @@ global.nowplaying = {
     div: null,
 };
 global.queue = [];
-global.appdatapath = remote.app.getPath('appData') + '\\audiofy';
+global.appdatapath = remote.app.getPath('appData') + '/audiofy';
 let config = JSON.parse(fs.readFileSync(global.appdatapath + '/config.json', {encoding: 'utf-8'}));
 let songs = [];
 if(config.dir) { songs = fs.readdirSync(config.dir); ipcRenderer.send('songSize', songs.length);}
@@ -202,9 +202,15 @@ setInterval(updateProgressValue, 500);
         }
     });
     pauseplaybtn.addEventListener('click', function(e) {
+        pauseplay();
+    })
+    document.body.onkeydown = function(e){
+        if(e.key == 'space' || e.keyCode == 32) {e.preventDefault(); return pauseplay();}
+    }
+    function pauseplay(){
         if(global.nowplaying.audio.paused) { global.nowplaying.audio.play(); pauseplaybtn.src = 'img/pause.svg';}
         else { global.nowplaying.audio.pause(); pauseplaybtn.src = 'img/play.svg'; }
-    })
+    }
 
     function updateProgressValue() {
         if(global.nowplaying.audio == null || !global.nowplaying.audio) return progressBar.value = 0;

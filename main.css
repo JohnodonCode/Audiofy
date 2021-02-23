@@ -260,7 +260,7 @@ p {margin-top: 10px; color: rgba(255,255,255,0.4);}
   margin-top: 15px;
 }
 #prevbtn {
-  margin-right: 24px;
+  margin-right: 26px;
   margin-left: -48px;
 }
 .seekerbtns {
@@ -299,7 +299,7 @@ p {margin-top: 10px; color: rgba(255,255,255,0.4);}
 }
 .progressdiv {
   transform:translateX(-50%);
-  margin-top: -5px;
+  margin-top: 2px;
   display: flex;
 }
 #progress {

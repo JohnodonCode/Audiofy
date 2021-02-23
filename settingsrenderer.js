@@ -2,7 +2,7 @@ const {remote, ipcRenderer} = require('electron');
 const fs = require('fs');
 
 
-global.appdatapath = remote.app.getPath('appData') + '\\audiofy';
+global.appdatapath = remote.app.getPath('appData') + '/audiofy';
 let config = JSON.parse(fs.readFileSync(global.appdatapath + '/config.json', {encoding: 'utf-8'}));
 document.addEventListener('DOMContentLoaded', function(e){
     document.getElementById('close-button').addEventListener('click', function(e){

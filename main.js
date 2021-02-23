@@ -5,7 +5,7 @@ const fs = require('fs');
 
 app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
 app.commandLine.appendSwitch('disable-web-security');
-global.appdatapath = app.getPath('appData') + '\\audiofy';
+global.appdatapath = app.getPath('appData') + '/audiofy';
 if(!fs.existsSync(global.appdatapath + '/config.json')) fs.writeFileSync(global.appdatapath + '/config.json', JSON.stringify({"dir":""}), {encoding: 'utf-8'});
 
 
